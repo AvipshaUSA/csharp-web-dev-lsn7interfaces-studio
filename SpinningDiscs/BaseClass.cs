@@ -4,28 +4,28 @@ using System.Text;
 
 namespace SpinningDiscs
 {
-  public  class BaseClass
+  public abstract class BaseClass
     {
         public string Name{ get; set;}
-        public  Dictionary<string, string> Contant { get; set; }
+        public  Dictionary<string,int> Contant { get; set; }
         public int Capacity { get;  }
-        public string DiscType { get; } 
-
-        public BaseClass(string name, Dictionary<string,string> contant, int capacity, string discType )
+        public string DiscType { get; }
+       public int StorageLeft { get; set; }
+        public BaseClass(string name, int capacity, Dictionary<string,int> contant, string discType)
         {
             Name = name;
             Contant = contant;
             Capacity = capacity;
             DiscType = discType;
-
+          
 
 
         }
-        public BaseClass()
+
+        public BaseClass(Dictionary<string,int> contant)
         {
-            Contant = new Dictionary<string, string>();
+            Contant = new Dictionary<string, int>();
         }
-        
 
         //public abstract  string StoreData(BaseClass baseClass)
         //{
